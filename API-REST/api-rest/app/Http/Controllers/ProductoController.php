@@ -13,7 +13,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::all();
+        return response()->json($productos);
     }
 
     /**
@@ -29,7 +30,19 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = new Producto;
+        $producto->nombre = $request->nombre;
+        $producto->stock = $request->stock;
+        $producto->descripcion = $request->descripcion;
+        $producto->imagen = $request->imagen;
+        $producto->categoria = $request->categoria;
+        $producto->costo = $request->costo;
+        $producto->save();
+        $data = [
+            'mensaje' => 'Producto creado satisfactoriamente',
+            'producto'=>$producto
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -37,7 +50,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+        return response()->json($producto);
     }
 
     /**
@@ -53,7 +66,18 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $producto->nombre = $request->nombre;
+        $producto->stock = $request->stock;
+        $producto->descripcion = $request->descripcion;
+        $producto->imagen = $request->imagen;
+        $producto->categoria = $request->categoria;
+        $producto->costo = $request->costo;
+        $producto->save();
+        $data = [
+            'mensaje' => 'Producto modificado satisfactoriamente',
+            'producto'=>$producto
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -61,6 +85,11 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        $data = [
+            'mensaje' => 'Producto eliminado satisfactoriamente',
+            'producto'=>$producto
+        ];
+        return response()->json($data);
     }
 }

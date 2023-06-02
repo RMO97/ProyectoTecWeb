@@ -13,7 +13,8 @@ class VentaController extends Controller
      */
     public function index()
     {
-        //
+        $ventas = Venta::all();
+        return response()->json($ventas);
     }
 
     /**
@@ -29,7 +30,17 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $venta = new Venta;
+        $venta->cliente_id = $request->cliente_id;
+        $venta->producto_id = $request->producto_id;
+        $venta->total_venta = $request->total_venta;
+        $venta->impuesto = $request->impuesto;
+        $venta->save();
+        $data = [
+            'mensaje' => 'Venta creada satisfactoriamente',
+            'venta'=>$venta
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -37,7 +48,9 @@ class VentaController extends Controller
      */
     public function show(Venta $venta)
     {
-        //
+
+        return response()->json($venta);
+
     }
 
     /**
@@ -53,7 +66,16 @@ class VentaController extends Controller
      */
     public function update(Request $request, Venta $venta)
     {
-        //
+        $venta->cliente_id = $request->cliente_id;
+        $venta->producto_id = $request->producto_id;
+        $venta->total_venta = $request->total_venta;
+        $venta->impuesto = $request->impuesto;
+        $venta->save();
+        $data = [
+            'mensaje' => 'Venta modificada satisfactoriamente',
+            'venta'=>$venta
+        ];
+        return response()->json($data);
     }
 
     /**
@@ -61,6 +83,11 @@ class VentaController extends Controller
      */
     public function destroy(Venta $venta)
     {
-        //
+        $venta->delete();
+        $data = [
+            'mensaje' => 'Venta eliminada satisfactoriamente',
+            'venta'=>$venta
+        ];
+        return response()->json($data);
     }
 }
