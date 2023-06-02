@@ -23,10 +23,10 @@ Route::get('/producto/{idProducto}',[ProductosController::class, 'view'])->name(
 Route::get('/producto/update',[ProductosController::class, 'update'])->name('producto.update');
 Route::get('/producto/delete/{id}',[ProductosController::class, 'delete'])->name('producto.delete');
 
-Route::get('/',[PersonasController::class, 'index'])->name('personas.index');
-Route::get('/persona',[PersonasController::class, 'create']);
-Route::post('/prersona',[PersonasController::class, 'store']);
-Route::get('/persona/{idPersona}',[PersonasController::class, 'view'])->name('persona.view');
-Route::get('/persona/update',[PersonasController::class, 'update'])->name('persona.update');
-Route::get('/persona/delete/{id}',[PersonasController::class, 'delete'])->name('persona.delete');
+Route::get('/',[ClientesController::class, 'index'])->name('clientes.index');
+Route::get('/cliente',[ClientesController::class, 'create']);
+Route::post('/cliente',[ClientesController::class, 'store']);
+Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cliente.view');
+Route::get('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
+Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
 

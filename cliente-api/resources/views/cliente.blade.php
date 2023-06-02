@@ -1,5 +1,5 @@
-<h1>Nueva Persona</h1>
-<form action="{{ route('personas.store') }}"method="POST">
+<h1>Nuevo Cliente</h1>
+<form action="{{ route('clientes.store') }}"method="POST">
     @csrf
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre">
