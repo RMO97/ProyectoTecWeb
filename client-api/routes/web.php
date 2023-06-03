@@ -42,10 +42,10 @@ Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cl
 Route::post('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
 
-Route::get('/venta',[VentasController::class, 'index'])->name('ventas.index');
-Route::get('/venta/{idVenta}',[VentasController::class, 'index'])->name('ventas.view');
-Route::post('/venta/update',[VentasController::class, 'update'])->name('ventas.update');
-Route::get('/venta/delete/{id}',[VentasController::class, 'index'])->name('ventas.delete');
-Route::get('/venta', [VentasController::class, 'create']);
-Route::post('/venta', [VentasController::class, 'store'])->name('ventas.store');
+Route::get('/ventasIndex',[VentasController::class, 'index'])->name('ventas.index');
+Route::get('/ventas/{idVenta}',[VentasController::class, 'view'])->name('ventas.view');
+Route::post('/ventas/update',[VentasController::class, 'update'])->name('ventas.update');
+Route::get('/ventas/delete/{id}',[VentasController::class, 'index'])->name('ventas.delete');
+Route::get('/ventas', [VentasController::class, 'create']);
+Route::post('/ventas', [VentasController::class, 'store'])->name('ventas.store');
 

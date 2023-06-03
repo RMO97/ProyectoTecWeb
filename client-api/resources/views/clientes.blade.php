@@ -24,3 +24,4 @@
         @endforeach
     </tbody>
 </table>
+<a href="{{ route('ventas.index') }}">Ventas</a>
