@@ -20,7 +20,7 @@ Route::get('/',function(){
     dd("hola");
 });
 
-/*
+
 Route::get('/',[ProductosController::class, 'index'])->name('productos.index');
 Route::get('/producto',[ProductosController::class, 'create']);
 Route::post('/producto',[ProductosController::class, 'store']);
@@ -34,4 +34,4 @@ Route::post('/cliente',[ClientesController::class, 'store']);
 Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cliente.view');
 Route::get('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
-*/
+
