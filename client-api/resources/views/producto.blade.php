@@ -15,3 +15,4 @@
     <input type="text" name="costo" id="costo">
     
     <button type="submit">Guardar</button>
+</form>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\VentasController;
 
  
 
@@ -26,7 +27,7 @@ use App\Http\Controllers\ClientesController;
 });*/
 
 
-//Route::get('/',[ProductosController::class, 'index'])->name('productos.index');
+Route::get('/producto',[ProductosController::class, 'index'])->name('productos.index');
 Route::get('/producto',[ProductosController::class, 'create']);
 Route::post('/producto',[ProductosController::class, 'store']);
 Route::get('/producto/{idProducto}',[ProductosController::class, 'view'])->name('producto.view');
@@ -40,4 +41,11 @@ Route::post('/cliente',[ClientesController::class, 'store']);
 Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cliente.view');
 Route::post('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
+
+Route::get('/venta',[VentasController::class, 'index'])->name('ventas.index');
+Route::get('/venta/{idVenta}',[VentasController::class, 'index'])->name('ventas.view');
+Route::post('/venta/update',[VentasController::class, 'update'])->name('ventas.update');
+Route::get('/venta/delete/{id}',[VentasController::class, 'index'])->name('ventas.delete');
+Route::get('/venta', [VentasController::class, 'create']);
+Route::post('/venta', [VentasController::class, 'store'])->name('ventas.store');
 

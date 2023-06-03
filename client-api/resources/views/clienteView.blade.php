@@ -1,4 +1,4 @@
-<h1>Nuevo Cliente</h1>
+<h1>Actualizar Cliente</h1>
 <form action="{{ route('cliente.update') }}"method="POST">
     @csrf
     <input type="hidden" name="id" value="{{ $cliente['id'] }}">
