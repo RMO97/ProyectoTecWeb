@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
 
 class ClientesController extends Controller
 {
     //
     public function index(){
-        $url = env('URL_SERVER_API','http://127.0.0.1');
+        $url = env('URL_SERVER_API', 'http://127.0.0.1');
         $response = Http::get($url.'/clientes'); 
-        $data = response->json();
+        $data = $response->json();
         return view('clientes', compact('data'));
     }
 
@@ -31,28 +33,29 @@ class ClientesController extends Controller
         return redirect()->route('clientes.index');
     }
 
-    public function delete(){
+    public function delete($id){
         $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::delete($url.'/clientes'.$id); 
+        $response = Http::delete($url.'/clientes/'.$id); 
 
         return redirect()->route('clientes.index');
     }
 
     public function view($id){
         $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::get($url.'/clientes'.$id);
-        $producto = $response->Json();
-        return view('clientes', compact('cliente'));
+        $response = Http::get($url.'/clientes/'.$id);
+        $cliente = $response->json();
+        return view('clienteView', compact('cliente'));
 
     }
 
     public function update(Request $request){
         $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::put($url.'/clientes'.$request->id,[
-            'nombre'->$request->nombre,
-            'telefono'->$request->telefono,
-            'deireccion'->$request->direccion,
-            'email'->$request->email,
+
+        $response = Http::put($url.'/clientes/'.$request->id,[
+            'nombre'=>$request->nombre,
+            'telefono'=>$request->telefono,
+            'direccion'=>$request->direccion,
+            'email'=>$request->email,
         ]);
 
         return redirect()->route('clientes.index');

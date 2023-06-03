@@ -11,3 +11,4 @@
     <input type="text" name="email" id="email">
     
     <button type="submit">Guardar</button>
+</from>
