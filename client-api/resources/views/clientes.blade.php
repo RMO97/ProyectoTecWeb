@@ -11,14 +11,14 @@
     <tbody>
         @foreach ($data as $cliente)
             <tr>
-                <td>{{ $cliente[nombre] }}</td>
-                <td>{{ $cliente[telefono] }}</td>
-                <td>{{ $cliente[direccion] }}</td>
-                <td>{{ $cliente[email] }}</td>
+                <td>{{ $cliente['nombre'] }}</td>
+                <td>{{ $cliente['telefono'] }}</td>
+                <td>{{ $cliente['direccion'] }}</td>
+                <td>{{ $cliente['email'] }}</td>
                 
                 <td>
-                    <a href="{{ 'cliente.view', $cliente['id'] }}">Ver</a>
-                    <a href="{{ 'cliente.delete', $cliente['id'] }}">Borrar</a>
+                    <a href="{{ route('cliente.view', $cliente['id']) }}">Ver</a>
+                    <a href="{{ route('cliente.delete', $cliente['id']) }}">Borrar</a>
                 </td>
             </tr>
         @endforeach
