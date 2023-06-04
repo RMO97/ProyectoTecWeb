@@ -4,8 +4,9 @@
         <tr>
             <th>Cliente</th>
             <th>Producto</th>
-            <th>Impuesto</th>
             <th>Total de venta</th>
+            <th>Impuesto</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -13,8 +14,9 @@
             <tr>
                 <td>{{ $venta['cliente_id'] }}</td>
                 <td>{{ $venta['producto_id'] }}</td>
-                <td>{{ $venta['impuesto'] }}</td>
                 <td>{{ $venta['total_venta'] }}</td>
+                <td>{{ $venta['impuesto'] }}</td>
+                
                 
                 <td>
                     <a href="{{ route('ventas.view', $venta['id']) }}">Ver</a>

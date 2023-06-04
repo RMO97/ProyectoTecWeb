@@ -24,20 +24,27 @@ class VentasController extends Controller
     }
 
     public function store(Request $request){
-        $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::post($url.'/ventas',[
-        'cliente_id'=>$request->cliente_id,
-        'producto_id'=>$request->producto_id,
-        'total_venta'=>$request->total_venta,
-        'impuesto'=>$request->impuesto,
-        ]);
+        try{
+            $url = env('URL_SERVER_API','http://127.0.0.1');
+            $response = Http::post($url.'/ventas',[
+            'cliente_id'=>$request->cliente_id,
+            'producto_id'=>$request->producto_id,
+            'total_venta'=>$request->total_venta,
+            'impuesto'=>$request->impuesto,
+            ]);
 
-        return redirect()->route('ventas.index');
+            return redirect()->route('ventas.index');
+
+        }catch(RequestException $re){
+            return back()->with('error','Ocurrio un error al crear la cuenta');
+        }catch(\Exception $e){
+            return back()->with('error','Ocurrio un error inesperado');
+        }   
     }
 
-    public function delete(){
+    public function delete($id){
         $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::delete($url.'/ventas'.$id); 
+        $response = Http::delete($url.'/ventas/'.$id); 
 
         return redirect()->route('ventas.index');
     }

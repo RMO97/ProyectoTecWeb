@@ -24,4 +24,6 @@
         @endforeach
     </tbody>
 </table>
+<a href="{{ route('productos.index') }}">Productos</a>
 <a href="{{ route('ventas.index') }}">Ventas</a>
+<a href="{{ route('clientes.store') }}">Crear nuevo cliente</a>

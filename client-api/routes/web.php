@@ -27,17 +27,17 @@ use App\Http\Controllers\VentasController;
 });*/
 
 
-Route::get('/producto',[ProductosController::class, 'index'])->name('productos.index');
-Route::get('/producto',[ProductosController::class, 'create']);
-Route::post('/producto',[ProductosController::class, 'store']);
-Route::get('/producto/{idProducto}',[ProductosController::class, 'view'])->name('producto.view');
-Route::post('/producto/update',[ProductosController::class, 'update'])->name('producto.update');
-Route::get('/producto/delete/{id}',[ProductosController::class, 'delete'])->name('producto.delete');
+Route::get('/productos',[ProductosController::class, 'index'])->name('productos.index');
+Route::get('/productos',[ProductosController::class, 'create']);
+Route::post('/productos',[ProductosController::class, 'store'])->name('productos store');
+Route::get('/productos/{idProducto}',[ProductosController::class, 'view'])->name('productos.view');
+Route::post('/productos/update',[ProductosController::class, 'update'])->name('productos.update');
+Route::get('/productos/delete/{id}',[ProductosController::class, 'delete'])->name('productos.delete');
 
 
 Route::get('/',[ClientesController::class, 'index'])->name('clientes.index');
 Route::get('/cliente',[ClientesController::class, 'create']);
-Route::post('/cliente',[ClientesController::class, 'store']);
+Route::post('/cliente',[ClientesController::class, 'store'])->name('clientes.store');
 Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cliente.view');
 Route::post('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
@@ -45,7 +45,7 @@ Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('
 Route::get('/ventasIndex',[VentasController::class, 'index'])->name('ventas.index');
 Route::get('/ventas/{idVenta}',[VentasController::class, 'view'])->name('ventas.view');
 Route::post('/ventas/update',[VentasController::class, 'update'])->name('ventas.update');
-Route::get('/ventas/delete/{id}',[VentasController::class, 'index'])->name('ventas.delete');
+Route::get('/ventas/delete/{id}',[VentasController::class, 'delete'])->name('ventas.delete');
 Route::get('/ventas', [VentasController::class, 'create']);
 Route::post('/ventas', [VentasController::class, 'store'])->name('ventas.store');
 

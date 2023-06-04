@@ -30,17 +30,22 @@ class VentaController extends Controller
      */
     public function store(Request $request)
     {
-        $venta = new Venta;
-        $venta->cliente_id = $request->cliente_id;
-        $venta->producto_id = $request->producto_id;
-        $venta->total_venta = $request->total_venta;
-        $venta->impuesto = $request->impuesto;
-        $venta->save();
-        $data = [
-            'mensaje' => 'Venta creada satisfactoriamente',
-            'venta'=>$venta
-        ];
-        return response()->json($data);
+        try{
+            $venta = new Venta;
+            $venta->cliente_id = $request->cliente_id;
+            $venta->producto_id = $request->producto_id;
+            $venta->total_venta = $request->total_venta;
+            $venta->impuesto = $request->impuesto;
+            $venta->save();
+            $data = [
+                'mensaje' => 'Venta creada satisfactoriamente',
+                'venta'=>$venta
+            ];
+
+            return response()->json($data);
+        }catch(\Exception $e){
+            return response()->json(['error'=>'Ocurrio un error inesperado al crear la venta'],500);
+        }
     }
 
     /**

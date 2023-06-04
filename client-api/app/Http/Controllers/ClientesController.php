@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\VentasController;
+use App\Http\Controllers\ProductosController;
+
 
 
 class ClientesController extends Controller
@@ -22,16 +24,23 @@ class ClientesController extends Controller
         return view('cliente');
     }
 
-    public function store(){
-        $url = env('URL_SERVER_API','http://127.0.0.1');
-        $response = Http::post($url.'/clientes',[
-        'nombre'->$request->nombre,
-        'telefono'->$request->telefono,
-        'direccion'->$request->direccion,
-        'email'->$request->email,
-        ]);
+    public function store(Request $request){
+        try{
+            $url = env('URL_SERVER_API','http://127.0.0.1');
+            $response = Http::post($url.'/clientes',[
+            'nombre'=>$request->nombre,
+            'telefono'=>$request->telefono,
+            'direccion'=>$request->direccion,
+            'email'=>$request->email,
+            ]);
 
-        return redirect()->route('clientes.index');
+            return redirect()->route('clientes.index');
+
+        }catch(RequestException $re){
+            return back()->with('error','Ocurrio un error al crear un cliente');
+        }catch(\Exception $e){
+            return back()->with('error','Ocurrio un error inesperado');
+         }    
     }
 
     public function delete($id){
