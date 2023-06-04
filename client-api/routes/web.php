@@ -29,7 +29,7 @@ use App\Http\Controllers\VentasController;
 
 Route::get('/productosIndex',[ProductosController::class, 'index'])->name('productos.index');
 Route::get('/productos',[ProductosController::class, 'create']);
-Route::post('/productos',[ProductosController::class, 'store'])->name('productos store');
+Route::post('/productos',[ProductosController::class, 'store'])->name('productos.store');
 Route::get('/productos/{idProducto}',[ProductosController::class, 'view'])->name('productos.view');
 Route::post('/productos/update',[ProductosController::class, 'update'])->name('productos.update');
 Route::get('/productos/delete/{id}',[ProductosController::class, 'delete'])->name('productos.delete');

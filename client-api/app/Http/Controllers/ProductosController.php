@@ -26,9 +26,9 @@ class ProductosController extends Controller
         'nombre'=>$request->nombre,
         'stock'=>$request->stock,
         'descripcion'=>$request->descripcion,
-        'imagen'->$request->imagen,
-        'categoria'->$request->categoria,
-        'costo'->$request->costo,
+        'imagen'=>$request->imagen,
+        'categoria'=>$request->categoria,
+        'costo'=>$request->costo,
         ]);
 
         return redirect()->route('productos.index');
