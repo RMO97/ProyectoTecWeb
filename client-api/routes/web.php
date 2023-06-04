@@ -27,7 +27,7 @@ use App\Http\Controllers\VentasController;
 });*/
 
 
-Route::get('/productos',[ProductosController::class, 'index'])->name('productos.index');
+Route::get('/productosIndex',[ProductosController::class, 'index'])->name('productos.index');
 Route::get('/productos',[ProductosController::class, 'create']);
 Route::post('/productos',[ProductosController::class, 'store'])->name('productos store');
 Route::get('/productos/{idProducto}',[ProductosController::class, 'view'])->name('productos.view');
