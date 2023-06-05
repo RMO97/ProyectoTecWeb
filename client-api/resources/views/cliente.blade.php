@@ -1,3 +1,6 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
 <h1>Nuevo Cliente</h1>
 <form action="{{ route('clientes.store') }}"method="POST">
     @csrf
@@ -11,4 +14,5 @@
     <input type="text" name="email" id="email">
     
     <button type="submit">Guardar</button>
-</from>
+</form>
+@endsection

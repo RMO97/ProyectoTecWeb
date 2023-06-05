@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1>Ventas</h1>
 <table>
     <thead>
@@ -27,3 +31,5 @@
     </tbody>
 </table>
 <a href="{{ route('ventas.store') }}">Registrar venta</a>
+
+@endsection

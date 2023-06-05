@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1>Nuevo Producto</h1>
 <form action="{{ route('productos.store') }}"method="POST">
     @csrf
@@ -16,3 +20,4 @@
     
     <button type="submit">Guardar</button>
 </form>
+@endsection

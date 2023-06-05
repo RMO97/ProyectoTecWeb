@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1>Actualizar Cliente</h1>
 <form action="{{ route('cliente.update') }}"method="POST">
     @csrf
@@ -13,3 +17,4 @@
     
     <button type="submit">Guardar</button>
 </form>
+@endsection

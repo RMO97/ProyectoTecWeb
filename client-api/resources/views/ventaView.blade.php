@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1>Actualizar Venta</h1>
 <form action="{{ route('ventas.update') }}"method="POST">
     @csrf
@@ -11,3 +15,5 @@
     <input type="text" name="impuesto" id="impuesto"  value="{{ $venta['impuesto'] }}">
     
     <button type="submit">Guardar</button>
+
+    @endsection

@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1> Productos </h1>
 <table>
     <thead>
@@ -28,3 +32,4 @@
     </tbody>
 </table>
 <a href="{{ route('productos.store') }}">Crear nuevo producto</a>
+@endsection

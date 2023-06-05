@@ -1,3 +1,7 @@
+@extends('layout/plantilla')
+@section('tituloPagina', 'Clientes index')
+@section('contenido')
+
 <h1>Nuevo Producto</h1>
 <form action="{{ route('productos.update') }}"method="POST">
     @csrf
@@ -16,3 +20,5 @@
     <input type="text" name="costo" id="costo" value="{{ $producto['costo'] }}">
     
     <button type="submit">Guardar</button>
+
+    @endsection
