@@ -25,7 +25,7 @@
                     
                     <td>
                         <a href="{{ route('cliente.view', $cliente['id']) }}" class="btn btn-warning">Actualizar</a>
-                        <a href="{{ route('cliente.delete', $cliente['id']) }}" class="btn btn-danger">Borrar</a>
+                        <a href="{{ route('cliente.show', $cliente['id']) }}" class="btn btn-danger">Borrar</a>
                     </td>
                 </tr>
             @endforeach

@@ -1,8 +1,12 @@
 @extends('layout/plantilla')
 @section('tituloPagina', 'Clientes index')
 @section('contenido')
-
+<div class="card">
+    <div class="card-header">
 <h1>Actualizar Cliente</h1>
+
+   </div>
+   <p class="card-text">
 <form action="{{ route('cliente.update') }}"method="POST">
     @csrf
     <input type="hidden" name="id" value="{{ $cliente['id'] }}">
@@ -15,6 +19,11 @@
     <label for="email">Email</label>
     <input type="text" name="email" id="email"  value="{{ $cliente['email'] }}">
     
-    <button type="submit">Guardar</button>
+    <button class="btn btn-primary">Guardar</button>
+     <br>
+     <br>
+    <a href="{{ route("clientes.index") }}" class="btn btn-info"> Regresar</a>
 </form>
+</p>
+</div>
 @endsection

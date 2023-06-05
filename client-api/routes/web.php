@@ -39,6 +39,7 @@ Route::get('/',[ClientesController::class, 'index'])->name('clientes.index');
 Route::get('/cliente',[ClientesController::class, 'create']);
 Route::post('/cliente',[ClientesController::class, 'store'])->name('clientes.store');
 Route::get('/cliente/{idPersona}',[ClientesController::class, 'view'])->name('cliente.view');
+Route::get('/cliente/show/{idPersona}',[ClientesController::class, 'show'])->name('cliente.show');
 Route::post('/cliente/update',[ClientesController::class, 'update'])->name('cliente.update');
 Route::get('/cliente/delete/{id}',[ClientesController::class, 'delete'])->name('cliente.delete');
 
