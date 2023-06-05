@@ -1,9 +1,12 @@
 @extends('layout/plantilla')
 @section('tituloPagina', 'Clientes index')
 @section('contenido')
-<div>
+<div class="card">
+    <div class="card-header">
     <h1> Clientes </h1>
-    <table>
+    </div>
+    <div class="card-body">
+    <table class="table table-sm table-hover">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -21,15 +24,16 @@
                     <td>{{ $cliente['email'] }}</td>
                     
                     <td>
-                        <a href="{{ route('cliente.view', $cliente['id']) }}">Ver</a>
-                        <a href="{{ route('cliente.delete', $cliente['id']) }}">Borrar</a>
+                        <a href="{{ route('cliente.view', $cliente['id']) }}" class="btn btn-warning">Actualizar</a>
+                        <a href="{{ route('cliente.delete', $cliente['id']) }}" class="btn btn-danger">Borrar</a>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <a href="{{ route('productos.index') }}">Productos</a>
-    <a href="{{ route('ventas.index') }}">Ventas</a>
-    <a href="{{ route('clientes.store') }}">Crear nuevo cliente</a>
+    <a href="{{ route('productos.index') }}" class="btn btn-info">Productos</a>
+    <a href="{{ route('ventas.index') }}" class="btn btn-dark">Ventas</a>
+    <a href="{{ route('clientes.store') }}" class="btn btn-info">Crear nuevo cliente</a>
+</div>
 </div>
 @endsection
