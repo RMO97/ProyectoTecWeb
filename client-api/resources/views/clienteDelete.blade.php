@@ -26,7 +26,7 @@
     </tbody>
     </table>
     <hr>
-    <form action="{{ route('cliente.delete'), $cliente ->id }}" method="POST">
+    <form action="{{ route('cliente.delete'), $cliente['id'] }}" method="POST">
     @csrf
     @method('DELETE')
     <a href="{{ route(clientes.index) }}" class="btn btn-info">Regresar</a>
