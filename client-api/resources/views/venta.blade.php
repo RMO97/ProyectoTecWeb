@@ -1,8 +1,11 @@
 @extends('layout/plantilla')
 @section('tituloPagina', 'Clientes index')
 @section('contenido')
-
+<div class="card">
+<div class="card-header">
 <h1>Nueva venta</h1>
+</div>
+<div class="card-body">
 <form action="{{ route('ventas.store') }}"method="POST">
     @csrf
     <label for="cliente_id">Cliente ID </label>
@@ -21,9 +24,14 @@
     <input type="text" name="total_venta" id="total_venta">
     <label for="impuesto">Impuesto</label>
     <input type="text" name="impuesto" id="impuesto">
-
-
-    <button type="submit">Realizar Compra</button>
-
+     <br>
+     <br>
+    <button class="btn btn-primary">Realizar Compra</button>
+    <br>
+    <br>
+    <a href="{{ route("ventas.index") }}" class="btn btn-success"> Regresar</a>
+    
+    </div>
+    </div>
     @endsection
 

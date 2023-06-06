@@ -22,7 +22,8 @@
     <button class="btn btn-primary">Guardar</button>
      <br>
      <br>
-    <a href="{{ route("clientes.index") }}" class="btn btn-info"> Regresar</a>
+    <a href="{{ route("clientes.index") }}" class="btn btn-success"> Regresar</a>
+    
 </form>
 </p>
 </div>

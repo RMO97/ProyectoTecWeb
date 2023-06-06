@@ -1,9 +1,12 @@
 @extends('layout/plantilla')
 @section('tituloPagina', 'Clientes index')
 @section('contenido')
-
+<div class="card">
+<div class="card-header">
 <h1>Ventas</h1>
-<table>
+</div>
+<div class="card-body">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th>Cliente</th>
@@ -23,13 +26,17 @@
                 
                 
                 <td>
-                    <a href="{{ route('ventas.view', $venta['id']) }}">Ver</a>
-                    <a href="{{ route('ventas.delete', $venta['id']) }}">Borrar</a>
+                    <a href="{{ route('ventas.view', $venta['id']) }}" class="btn btn-warning">Actualizar</a>
+                    <a href="{{ route('ventas.delete', $venta['id']) }}" class="btn btn-danger">Borrar</a>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
-<a href="{{ route('ventas.store') }}">Registrar venta</a>
-
+<a href="{{ route('ventas.store') }}" class="btn btn-primary">Registrar venta</a>
+<br>
+    <br>
+    <a href="{{ route("productos.index") }}" class="btn btn-success"> Productos</a>
+</div>
+</div>
 @endsection

@@ -29,14 +29,17 @@
                 <td>{{ $producto['categoria'] }}</td>
                 <td>{{ $producto['costo'] }}</td>
                 <td>
-                    <a href="{{ route('productos.view', $producto['id']) }}">Ver</a>
-                    <a href="{{ route('productos.delete', $producto['id']) }}">Borrar</a>
+                    <a href="{{ route('productos.view', $producto['id']) }}" class="btn btn-warning">Actualizar</a>
+                    <a href="{{ route('productos.delete', $producto['id']) }}" class="btn btn-danger">Borrar</a>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
-<a href="{{ route('productos.store') }}">Crear nuevo producto</a>
+<a href="{{ route('productos.store') }}" class="btn btn-info">Crear nuevo producto</a>
+<br>
+<br>
+<a href="{{ route("clientes.index") }}" class="btn btn-success"> Clientes</a>
 </div>
 </div>
 @endsection
