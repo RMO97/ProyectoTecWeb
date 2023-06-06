@@ -23,7 +23,9 @@
                 <td>{{ $producto['nombre'] }}</td>
                 <td>{{ $producto['stock'] }}</td>
                 <td>{{ $producto['descripcion'] }}</td>
-                <td>{{ $producto['imagen'] }}</td>
+                <td>
+                    <img src = "{{ $producto['imagen'] }}">
+                </td>
                 <td>{{ $producto['categoria'] }}</td>
                 <td>{{ $producto['costo'] }}</td>
                 <td>
