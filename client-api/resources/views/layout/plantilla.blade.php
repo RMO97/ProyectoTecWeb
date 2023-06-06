@@ -11,7 +11,7 @@
 
     <title>@yield('tituloPagina')</title>
   </head>
-  <body>
+  <body style="background: url('fondo.jpg') no repeat; background size:cover">
     <div class="container">
         @yield('contenido')
     </div>
