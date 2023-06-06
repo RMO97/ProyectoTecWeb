@@ -1,9 +1,12 @@
 @extends('layout/plantilla')
 @section('tituloPagina', 'Clientes index')
 @section('contenido')
-
+<div class="card">
+<div class="card-header">
 <h1> Productos </h1>
-<table>
+</div>
+<div class="card-body">
+<table class="table table-sm table-hover">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -32,4 +35,6 @@
     </tbody>
 </table>
 <a href="{{ route('productos.store') }}">Crear nuevo producto</a>
+</div>
+</div>
 @endsection

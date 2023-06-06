@@ -71,12 +71,12 @@ class ClientesController extends Controller
         return redirect()->route('clientes.index');
     }
 
-    public function show($id){
+   /* public function show($id){
         $url = env('URL_SERVER_API','http://127.0.0.1');
         $response = Http::get($url.'/clientes/'.$id);
         $cliente = $response->json();
         return view('clienteDelete', compact('cliente'));
-    }
+    }*/
 
 
 }
